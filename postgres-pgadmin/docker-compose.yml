@@ -1,0 +1,32 @@
+version: "3.3"
+
+services:
+
+  postgres:
+    image: postgres:11
+    restart: always
+    volumes:
+      - ./docker/postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - database-network
+
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "admin@pgadmin.com.br"
+      PGADMIN_DEFAULT_PASSWORD: "pgadmin2020"
+    ports:
+      - 8888:80
+    depends_on:
+      - postgres
+    networks:
+      - database-network
+
+networks:
+  database-network:
+    driver: bridge
