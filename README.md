@@ -32,10 +32,10 @@ Após conectado será exibida a seguinte tela.
 
 Para parar a execução do serviço basta apenas executar o comando abaixo dentro da pasta onde se encontra o arquivo docker-compose.yml.
 
-## Executar MySQL
+## MySQL
 
 O diretório mysql-phpmyadmin guarda o compose que sobe uma instância do banco de dados mysql juntamente com o phpmyadmin.
 
-## Executar PostgreSQL
+## PostgreSQL
 
 O diretório postgres-pgadmin guarda o compose que sobe uma instância do banco de dados PostgeSQL juntamente com o pgadmin.
