@@ -11,8 +11,6 @@ services:
       POSTGRES_PASSWORD: postgres
     ports:
       - "5432:5432"
-    networks:
-      - database-network
 
   pgadmin:
     image: dpage/pgadmin4
@@ -24,9 +22,3 @@ services:
       - 8888:80
     depends_on:
       - postgres
-    networks:
-      - database-network
-
-networks:
-  database-network:
-    driver: bridge

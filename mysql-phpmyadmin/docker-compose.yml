@@ -11,8 +11,6 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=mysql
       - MYSQL_DATABASE=app_development
-    networks:
-      - database-network
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
@@ -22,9 +20,3 @@ services:
       - 9999:80
     environment:
       - PMA_ARBITRARY=1
-    networks:
-      - database-network
-
-networks:
-  database-network:
-    driver: bridge
